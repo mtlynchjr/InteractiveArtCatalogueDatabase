@@ -35,8 +35,10 @@ def delete_artwork():
         conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (delete_artwork, ))
     conn.close()
 
-create_artists_table()
-create_artworks_table()
-add_new_artist()
-add_new_artwork()
-delete_artwork()
+# Code functions as-is when called
+
+# create_artists_table()
+# create_artworks_table()
+# add_new_artist()
+# add_new_artwork()
+# delete_artwork()
