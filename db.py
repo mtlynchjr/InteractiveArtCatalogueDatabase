@@ -9,7 +9,7 @@ def create_artists_table():
 
 def create_artworks_table():
     with sqlite3.connect(database) as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artist_name TEXT, artwork_name TEXT, price REAL, available BOOLEAN (UNIQUE artwork_name COLLATE NOCASE))")
+        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN (UNIQUE artwork_name COLLATE NOCASE))")
     conn.close()
 
 def add_new_artist():
@@ -20,4 +20,11 @@ def add_new_artist():
         conn.execute(f"INSERT INTO artists VALUES (? , ?)", (new_artist_name , new_artist_email))
     conn.close()
 
-
+def add_new_artwork():
+    new_artwork = input("What is the name of the artwork you would like to add? ") # Prompt user for new artworks's name
+    new_artist = input("What is the name of the artist attributed to that artwork? ") # Prompt user for new artwork's artist
+    new_price = float(input("How much does the artwork cost? $")) # Prompt user for new artwork's price.
+    new_avaiability = input("Is the artwork currently available for purchase? ") # Prompt user for new artwork's availability
+    with sqlite3.connect(database) as conn:
+        conn.execute(f"INSERT INTO artworks VALUES (? , ?, ?, ?)", (new_artwork, new_artist, new_price, new_avaiability))
+    conn.close()
