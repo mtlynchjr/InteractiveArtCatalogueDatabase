@@ -32,5 +32,5 @@ def add_new_artwork():
 def delete_artwork():
     delete_artwork = input("What is the name of the artwork you would like to remove? ")
     with sqlite3.connect(database) as conn:
-        conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (artwork_name, )
+        conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (delete_artwork, ))
     conn.close()
