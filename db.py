@@ -34,3 +34,9 @@ def delete_artwork():
     with sqlite3.connect(database) as conn:
         conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (delete_artwork, ))
     conn.close()
+
+create_artists_table()
+create_artworks_table()
+add_new_artist()
+add_new_artwork()
+delete_artwork()
