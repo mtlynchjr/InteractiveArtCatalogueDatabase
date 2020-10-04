@@ -4,12 +4,12 @@ database = "art.sqlite3" # For ease, make "database" a Global Variable always as
 
 def create_artists_table():
     with sqlite3.connect(database) as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS artists (artist_name TEXT, artist_email TEXT (UNIQUE artist_email COLLATE NOCASE))")
+        conn.execute("CREATE TABLE IF NOT EXISTS artists (artist_name TEXT, artist_email TEXT)")
     conn.close()
 
 def create_artworks_table():
     with sqlite3.connect(database) as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN (UNIQUE artwork_name COLLATE NOCASE))")
+        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN)")
     conn.close()
 
 def add_new_artist():
