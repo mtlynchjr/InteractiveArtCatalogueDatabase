@@ -32,10 +32,10 @@ def add_new_artwork():
 def search_by_artist():
     search_artist = input("What is the name of the artist whose artworks you want to see? ")
     with sqlite3.connect(database) as conn:
-        results = conn.execute("SELECT * FROM artworks WHERE artist_name like ?", (search_artist))
-        return results
+        results = conn.execute("SELECT artwork_name FROM artworks WHERE artist_name like ?", (search_artist, ))
+        return(results)
     conn.close()
-    
+
 def delete_artwork():
     delete_artwork = input("What is the name of the artwork you would like to remove? ")
     with sqlite3.connect(database) as conn:
@@ -44,8 +44,9 @@ def delete_artwork():
 
 # Code functions as-is when called
 
-# create_artists_table()
-# create_artworks_table()
-# add_new_artist()
-# add_new_artwork()
+create_artists_table()
+create_artworks_table()
+add_new_artist()
+add_new_artwork()
+search_by_artist()
 # delete_artwork()
