@@ -1,5 +1,5 @@
 import ui # Connect to ui.py module
-import db # Connect to db.py module
+from db import database # Connect to db.py module
 
 while True:
 
@@ -17,11 +17,9 @@ while True:
     elif option == "4":
         delete_artwork()
     elif option == "5":
-        display_artist_artwork()
-    elif option == "6":
         change_availability()
-    elif option == "7":
-        display_available_artwork()
+    elif option == "6":
+        available_artwork()
     elif option == "q" or option == "Q":
         break
     else:

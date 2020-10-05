@@ -10,7 +10,7 @@ def create_artists_table():
 
 def create_artworks_table():
     with sqlite3.connect(database) as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN)")
+        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN")
     conn.close()
 
 def add_new_artist():
@@ -43,6 +43,22 @@ def delete_artwork():
         conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (delete_artwork, ))
     conn.close()
 
+# def change_availability():
+    # available_update = input("What is the name of the artwork whose availability you would like to update? ")
+        # with sqlite3.connect(database) as conn:
+        # results = conn.execute("SELECT available FROM artworks WHERE artwork_name = ?", (available_update, ))
+        # if results = True:
+        #
+        #return(results)
+    #conn.close()
+
+def available_artwork():
+    search_artist = input("What is the name of the artist whose available artworks you want to see? ")
+    with sqlite3.connect(database) as conn:
+        results = conn.execute("SELECT artwork_name FROM artworks WHERE artist_name = ? AND available IS TRUE", (search_artist, ))
+        return(results)
+    conn.close()
+
 # Code functions as-is when called
 
 create_artists_table()
@@ -50,4 +66,5 @@ create_artworks_table()
 add_new_artist()
 add_new_artwork()
 search_by_artist()
-# delete_artwork()
+delete_artwork()
+available_artwork()
