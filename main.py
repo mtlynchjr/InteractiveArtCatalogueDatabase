@@ -28,6 +28,10 @@ while True:
         print("You did not choose a valid option.")
         break
 
+def add_new_artist():
+    new_artist_name = ui.get_non_empty_string(input("What is the name of the artist you would like to add? ")) # Prompt useer for new artist's name
+    # new_artist_name = ui.get_non_empty_string()
+
 # add_new_artist()
 # add_new_artwork()
 # search_by_artist()

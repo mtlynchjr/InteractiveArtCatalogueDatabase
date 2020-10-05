@@ -1,4 +1,5 @@
 import sqlite3 # Import SQLite3
+import main
 
 database = "art.sqlite3" # For ease, make "database" a Global Variable always associated with "art.sqlite"
 
@@ -13,8 +14,8 @@ def create_artworks_table():
     conn.close()
 
 def add_new_artist():
-    new_artist_name = input("What is the name of the artist you would like to add? ") # Prompt useer for new artist's name
-    new_artist_email = input("Please enter the e-mail address of the artist you would like to add: ") # Prompt user for new artist's e-mail address
+    # new_artist_name = input("What is the name of the artist you would like to add? ") # Prompt useer for new artist's name
+    # new_artist_email = input("Please enter the e-mail address of the artist you would like to add: ") # Prompt user for new artist's e-mail address
     
     with sqlite3.connect(database) as conn:
         conn.execute(f"INSERT INTO artists VALUES (? , ?)", (new_artist_name , new_artist_email))
