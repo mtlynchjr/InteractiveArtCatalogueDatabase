@@ -5,7 +5,7 @@ def main(): # Create main function
 
     # While main function is active do the following ...
     while True:
-        # Welcome and instruct the usuer
+        # Welcome and instruct the user
         print("Welcome to the Interactive Art Catolouge!\n")
         print('Please select an option from the menu below: (Enter "Q" to Quit)')
         print("1. Add Artist\n2. Add Artwork\n3. Search by Artist\n4. Delete Artwork\n5. Display Artist's Work\n6. Change Artwork Availablity\n7. Display Artist's Available Artwork\n")
@@ -31,10 +31,10 @@ def main(): # Create main function
         break
 
 def add_new_artist(): # Create Add New Artist function
-    # Prompt useer for new artist's name
+    # Prompt user for new artist's name
     new_artist_name = ui.get_non_empty_string(input(
         "What is the name of the artist you would like to add? "))
-    # Prompt useer for new artist's e-mail address
+    # Prompt user for new artist's e-mail address
     new_artist_email = ui.get_non_empty_string(
         input("Please enter the e-mail address of the artist you would like to add: "))
     # Update database with values
@@ -69,7 +69,7 @@ def search_by_artist(): # Create Search by Artist function
     db.search_by_artist(search_artist, )
 
 def delete_artwork(): # Create Delete Artwork function
-    # Prompt usuer for artwork to be deleted
+    # Prompt user for artwork to be deleted
     deleted_artwork = ui.get_non_empty_string(
         input("What is the name of the artwork you would like to remove? "))
     # Update database with values
