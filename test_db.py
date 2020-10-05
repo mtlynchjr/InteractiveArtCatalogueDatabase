@@ -60,4 +60,4 @@ class TestArtDatabase(TestCase):
 
 # Call main function
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main()    

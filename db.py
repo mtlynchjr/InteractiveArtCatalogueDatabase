@@ -59,3 +59,7 @@ def available_artwork(available_artist):
         results = conn.execute("SELECT artwork_name FROM artworks WHERE artist_name = ? AND available IS TRUE", (available_artist, ))
         return(results)
     conn.close()
+<<<<<<< HEAD
+=======
+    
+>>>>>>> test_db
