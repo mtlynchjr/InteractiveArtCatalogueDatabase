@@ -1,5 +1,5 @@
-import ui  # Connect to ui.py module
-import db # Connect to db.py module
+import ui  # Import all from to ui.py module
+import db # Import all from db.py module
 
 def main(): # Create main function
 
