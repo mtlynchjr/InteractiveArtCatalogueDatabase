@@ -1,4 +1,3 @@
-
 # Ensure input is not empty
 def get_non_empty_string(question):
     # TO DO: Validation
