@@ -10,7 +10,7 @@ def create_artists_table():
 
 def create_artworks_table():
     with sqlite3.connect(database) as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available BOOLEAN")
+        conn.execute("CREATE TABLE IF NOT EXISTS artworks (artwork_name TEXT, artist_name TEXT, price REAL, available TEXT)")
     conn.close()
 
 def add_new_artist():
