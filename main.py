@@ -75,10 +75,6 @@ def delete_artwork(): # Create Delete Artwork function
     # Update database with values
     db.delete_artwork(deleted_artwork, )
 
-# def change_availability():
-    # available_update = ui.VALIDATION(input("What is the name of the artwork whose availability you would like to update? "))
-    # db.change_availability(availabile_update, )
-
 def available_artwork(): # Create Available Artwork function
     # Prompt user for artist's name
     available_artist = ui.get_non_empty_string(input(

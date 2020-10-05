@@ -1,8 +1,8 @@
 import sqlite3
-import unittest
-from unittest import TestCase
 import db
 from db import database
+import unittest
+from unittest import TestCase
 
 class TestArtDatabase(TestCase):
     test_database = "test_art.sqlite3"
@@ -15,34 +15,34 @@ class TestArtDatabase(TestCase):
             conn.execute("DELETE FROM artworks")
         conn.close()
     
-    # Create values to be inputted and confirm that they function correctly
+    # Create test values for adding a new artist and add to test database
     def test_add_new_artist(self):
         db.add_new_artist("Pablo Picasso", "pp@aol.com")
         expected = {"Pablo Picasso" : "pp@aol.com"}
         self.compare_db_to_expected(expected)
 
-    # Create values to be inputted and confirm that they function correctly
+    # Create test values for adding a new artwork and add to test database
     def test_add_new_artwork(self):
         db.add_new_artwork("Starry Night", "Vincent Van Gogh", 1000, "no")
-        expected ={"Starry Night", "Vincent Van Gogh", 1000, "no"}
+        expected ={"Starry Night" : "Vincent Van Gogh" : 1000 : "no"}
         self.compare_db_to_expected(expected)
 
-    # Create values to be inputted and confirm that they function correctly
+    # Create a test value for selecting a specific artist from the test database
     def test_search_by_artist(self):
         db.search_by_artist("Winslow Homer")
         expected = {"Winslow Homer"}
         self.compare_db_to_expected(expected)
 
-    # Create values to be inputted and confirm that they function correctly
+    # Create a test value to for finding and deleting an artwork from the test database
     def test_delete_artwork(self):
         db.delete_artwork("Nighthawks")
         expected = {"Nighthawks"}
         self.compare_db_to_expected(expected)
 
-    # Create values to be inputted and confirm that they function correctly
+    # Create a test value for finding an artwork in the test databse to determine its availability
     def test_available_artwork(self):
-        db.available_artwork("Georgia O'Keefe")
-        expected ={"Georgia O'Keefe"}
+        db.available_artwork("American Gothic")
+        expected ={"American Gothic"}
         self.compare_db_to_expected(expected)
 
     # From unit testing video lecture "compare to expected" created for ease

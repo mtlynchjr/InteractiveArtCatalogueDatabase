@@ -21,7 +21,6 @@ create_artworks_table()
 
 # Using values from main.py update database with a new artist
 def add_new_artist(new_artist_name, new_artist_email):
-    new_artist_name = main.add_new_artist
     with sqlite3.connect(database) as conn:
         conn.execute(f"INSERT INTO artists VALUES (? , ?)", (new_artist_name , new_artist_email))
     conn.close()
@@ -45,24 +44,10 @@ def delete_artwork(deleted_artwork):
         conn.execute(f"DELETE FROM artworks WHERE artwork_name = ?", (deleted_artwork, ))
     conn.close()
 
-# def change_availability(available_update):
-    # available_update = input("What is the name of the artwork whose availability you would like to update? ")
-        # with sqlite3.connect(database) as conn:
-        # results = conn.execute("SELECT available FROM artworks WHERE artwork_name = ?", (available_update, ))
-        # if results = True:
-        #return(results)
-    #conn.close()
-
 # Using values from main.py update database with an artist's available artwork
 def available_artwork(available_artist):
     with sqlite3.connect(database) as conn:
         results = conn.execute("SELECT artwork_name FROM artworks WHERE artist_name = ? AND available IS TRUE", (available_artist, ))
         return(results)
     conn.close()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> test_db
-=======
->>>>>>> ui
+
