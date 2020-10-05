@@ -60,6 +60,9 @@ def available_artwork(available_artist):
         return(results)
     conn.close()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> test_db
+=======
+>>>>>>> ui
