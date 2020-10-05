@@ -1,5 +1,5 @@
 import ui # Connect to ui.py module
-import db # Connect to db.py module
+from db import database # Connect to db.py module
 
 while True:
 
